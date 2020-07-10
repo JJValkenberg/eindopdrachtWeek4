@@ -12,6 +12,7 @@ const wordList = [
 ];
 let maxAmount = 5;
 let attempts = 0;
+let guessedLetters = [];
 
 const PicksRandomWord = (list) => {
   let index = Math.floor(Math.random() * list.length);
@@ -21,10 +22,32 @@ const PicksRandomWord = (list) => {
 const CheckWordForLetter = (word, letter) => {
   return word.includes(letter);
 };
+// console.log(CheckWordForLetter("boek", "e"));
 
 const addsAmountofAttemps = (attempts) => {
   attempts++;
   return attempts;
+};
+
+const UpdateListOfGuesses = (guessedLetters, letter) => {
+  guessedLetters.push(letter);
+  return guessedLetters;
+};
+
+const checksIfGameOver = (attempts) => {
+  if (attempts <= 4) {
+    return false;
+  } else {
+    return true;
+  }
+};
+
+const checksIfGameIsWon = (PicksRandomWord) => {
+  if (PicksRandomWord === "") {
+    return true;
+  } else {
+    return false;
+  }
 };
 
 let inputs;
@@ -147,4 +170,7 @@ module.exports = {
   PicksRandomWord,
   CheckWordForLetter,
   addsAmountofAttemps,
+  UpdateListOfGuesses,
+  checksIfGameOver,
+  checksIfGameIsWon,
 };
