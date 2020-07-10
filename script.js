@@ -22,7 +22,7 @@ const CheckWordForLetter = (word, letter) => {
   return word.includes(letter);
 };
 
-const addsAmountofAttemps = () => {
+const addsAmountofAttemps = (attempts) => {
   attempts++;
   return attempts;
 };
