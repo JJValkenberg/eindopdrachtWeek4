@@ -1,0 +1,86 @@
+body{
+    background-color: #192d3b;
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 15% repeat(3, 1fr);
+    grid-template-areas: ". titleBox titleBox ." ". inputBox endOfGameBox ." ". inputBox endOfGameBox ." ". outputBox outputBox .";
+    
+  }
+  .titleBox {
+    grid-area: titleBox;
+    margin-top: 15px;
+    padding-left: 5px;
+    border-bottom-style: solid;
+    border-width: 5px;
+    border-color: #192d3b;
+    background-color: #407294;
+}
+  
+  .inputBox {
+    grid-area: inputBox;
+    padding-left: 5px;
+    padding-top: 5px;
+    background-color: #668ea9;
+}
+.endOfGameBox {
+    grid-area: endOfGameBox;
+    padding-left: 5px;
+    padding-top: 5px;
+    background-color: #668ea9;
+}
+  
+  .outputBox {
+    grid-area: outputBox;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    border-top-style: solid;
+    border-width: 5px;
+    border-color: #192d3b;
+    background-color: #407294;
+}
+/*buttons*/
+.guess{
+    /*
+    buttons needs styling and change of color at hover
+    */
+}
+.restart{
+
+}
+.win{
+    display: flex;
+    margin-right: 20px;
+    padding-left: 5px;
+    background-color: #668ea9;
+    color: #668ea9;
+    animation-name: aniWin;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+    
+}
+.lose{
+    display: flex;
+    margin-right: 20px;
+    padding-left: 5px;
+    background-color: #668ea9;
+    color: #668ea9;
+    animation-name: aniLose;
+    animation-duration: 800ms;
+    animation-iteration-count: infinite;
+}
+@keyframes aniWin {
+    from {color: #668ea9;
+        background-color: #668ea9;
+     }
+    to {background-color: yellow;
+       }
+  }
+@keyframes aniLose {
+    from {color: #668ea9;
+        background-color: #668ea9;
+     }
+    to {background-color: yellow;
+       }
+  }
