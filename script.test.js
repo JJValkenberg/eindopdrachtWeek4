@@ -1,4 +1,8 @@
-const { PicksRandomWord, CheckWordForLetter } = require("./script");
+const {
+  PicksRandomWord,
+  CheckWordForLetter,
+  addsAmountofAttemps,
+} = require("./script");
 
 ///TRY OUT TO SEE IF TESTING WORKS - KAN WEG
 // test("testGeneral", () => {
@@ -28,8 +32,15 @@ describe("CheckWordForLetter", () => {
 });
 
 // 3. updaten van het aantal pogingen van de gebruiker
-describe("updateAmountOfAttempts", () => {
-  test("if the amount of attempts increments", () => {});
+describe("addsAmountofAttemps", () => {
+  test("if the amount of attempts adds up", () => {
+    const attempts = 3;
+    expect(addsAmountofAttemps(attempts)).toBe(4);
+  });
+  test("if the amount of attempts adds up", () => {
+    const attempts = 3;
+    expect(addsAmountofAttemps(attempts)).not.toBe(3);
+  });
 });
 
 // Te testen functionaliteiten

@@ -11,6 +11,7 @@ const wordList = [
   "geeuw",
 ];
 let maxAmount = 5;
+let attempts = 0;
 
 const PicksRandomWord = (list) => {
   let index = Math.floor(Math.random() * list.length);
@@ -19,6 +20,11 @@ const PicksRandomWord = (list) => {
 
 const CheckWordForLetter = (word, letter) => {
   return word.includes(letter);
+};
+
+const addsAmountofAttemps = () => {
+  attempts++;
+  return attempts;
 };
 
 let inputs;
@@ -140,4 +146,5 @@ document.addEventListener("DOMContentLoaded", function () {
 module.exports = {
   PicksRandomWord,
   CheckWordForLetter,
+  addsAmountofAttemps,
 };
